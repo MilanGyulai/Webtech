@@ -1,0 +1,120 @@
+.content
+{
+    background-color: rgba(34, 31, 31, 0.6);
+    margin:50px;
+    padding: 25px;
+    text-align:inherit ;
+    font-size: 14pt;
+    border-style: hidden;
+    border-radius: 10px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+body
+{
+    background-image: url("../img/mazda-rx7.jpg");
+    background-attachment: fixed;
+    color: azure;
+    background-size: cover;
+    background-repeat: none;
+}
+
+h2
+{
+    text-align: center;
+}
+
+h1{
+    text-align: center;
+    color: BlueViolet;
+}
+
+h3{
+    text-align: center;
+    color: coral;
+}
+
+.kep
+{
+    display:block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 1280px;
+    height: 720px;
+}
+
+table
+{
+    width: 80%;
+    border-collapse: collapse;
+    border: 3px solid rgb(90, 69, 119, 0.3);
+    margin-left: auto;
+    margin-right: auto;
+    background-color: rgba(58, 21, 92, 0.3);
+    
+}
+
+td{
+
+    text-align: center;
+    height: 50px;
+    padding: 15px;
+    width: 33%;
+}
+
+th{
+    height: 50px;
+    text-align: center;
+    border-bottom: 1px solid black
+}
+
+tr:nth-child(odd){
+    background-color: rgba(255, 255, 255, 0.425);
+}
+
+
+hr{
+    color: black;
+    display: block;
+    height: 1px;
+}
+.about{
+    background-color: rgba(86, 86, 86, 0.6);
+    margin:50px;
+    padding: 25px;
+    text-align:center ;
+    font-size: 14pt;
+    border-style: hidden;
+    border-radius: 10px;
+}
+
+.links{
+    background-color: rgba(0, 0, 0, 0.6);
+
+}
+a{
+    color: azure;
+    text-decoration: none;
+}
+a:visited{
+    color: azure;
+}
+
+.link{
+    background-color: rgba(100,100, 100, 0.4);
+    padding: 15px 55px;
+    transition: 0.75s;
+    border-radius: 10px;
+
+}
+.link:hover{
+    padding: 25px 75px;
+    transition: 0.75s;
+}
+footer{
+    color: coral;
+}
+
+.gombok{
+padding: 15px 15px;
+}
