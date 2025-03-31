@@ -1,4 +1,4 @@
-//const GITHUB_ACCESS_TOKEN = '';
+
 
 function loadNavigation() {
     fetch('nav.html')
@@ -24,7 +24,7 @@ function searchUser() {
         .then(response => response.json())
         .then(data => {
             const resultsDiv = document.getElementById('results');
-            resultsDiv.innerHTML = ''; 
+            resultsDiv.innerHTML = ''; // Eredmények törlése
 
             if (data.items && data.items.length > 0) {
                 data.items.forEach(user => {
