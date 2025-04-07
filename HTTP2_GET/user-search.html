@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>GitHub felhasználó kereső</title>
+</head>
+<body>
+    <h2>User search</h2>
+    <input type="text" id="username" placeholder="Felhasználónév">
+    <button onclick="searchUser()">Keresés</button>
+    <div id="results"></div>
+    
+    <script>
+        function searchUser() {
+            const username = document.getElementById('username').value;
+            fetch(`https://api.github.com/search/users?q=${username}`)
+                .then(response => response.json())
+                .then(data => {
+                    let resultsHtml = '';
+                    data.items.forEach(user => {
+                        resultsHtml += `<p><a href="user.html?id=${user.login}">${user.login}</a></p>`;
+                    });
+                    document.getElementById('results').innerHTML = resultsHtml;
+                })
+                .catch(error => console.error('Hiba történt:', error));
+        }
+    </script>
+</body>
+</html>

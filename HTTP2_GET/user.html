@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Felhasználó adatai</title>
+    <style>
+        .user-details {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            font-family: sans-serif;
+        }
+
+        .avatar {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            margin-bottom: 20px;
+        }
+
+        .info {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="user-details">
+        <img id="avatar" class="avatar" src="" alt="Felhasználói avatar">
+        <div class="info">
+            <h1 id="name"></h1>
+            <p id="blog"></p>
+            <p id="location"></p>
+            <p id="bio"></p>
+            <p>Nyilvános repók: <span id="public_repos"></span></p>
+            <p>Követők: <span id="followers"></span></p>
+        </div>
+    </div>
+
+    <script>
+        const urlParams = new URLSearchParams(window.location.search);
+        const username = urlParams.get('id');
+
+        fetch(`https://api.github.com/users/${username}`)
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById('avatar').src = data.avatar_url;
+                document.getElementById('name').textContent = data.name || '';
+                document.getElementById('blog').textContent = data.blog || '';
+                document.getElementById('location').textContent = data.location || '';
+                document.getElementById('bio').textContent = data.bio || '';
+                document.getElementById('public_repos').textContent = data.public_repos || '';
+                document.getElementById('followers').textContent = data.followers || '';
+
+                // Elrejtjük az üres vagy null értékű elemeket
+                if (!data.name) document.getElementById('name').style.display = 'none';
+                if (!data.blog) document.getElementById('blog').style.display = 'none';
+                if (!data.location) document.getElementById('location').style.display = 'none';
+                if (!data.bio) document.getElementById('bio').style.display = 'none';
+            })
+            .catch(error => console.error('Hiba történt:', error));
+    </script>
+</body>
+</html>
